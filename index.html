@@ -4,8 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="script.js">
+<link rel="stylesheet" href="style.css"></link>
 <title>Scientific Calculator</title>
 
 
@@ -56,7 +55,104 @@
     </div>
 </div>
 
+<script>
 
+const display = document.getElementById("display");
+
+function append(value){
+    display.value += value;
+}
+
+function clearDisplay(){
+    display.value = "";
+}
+
+function deleteLast(){
+    display.value = display.value.slice(0,-1);
+}
+
+function calculate(){
+    try{
+        display.value = eval(display.value);
+    }
+    catch{
+        display.value = "Error";
+    }
+}
+
+function sqrt(){
+    try{
+        display.value = Math.sqrt(eval(display.value));
+    }
+    catch{
+        display.value = "Error";
+    }
+}
+
+function square(){
+    try{
+        let num = eval(display.value);
+        display.value = num * num;
+    }
+    catch{
+        display.value = "Error";
+    }
+}
+
+function power(){
+    append("**");
+}
+
+function pi(){
+    display.value += Math.PI;
+}
+
+function sin(){
+    try{
+        display.value = Math.sin(eval(display.value) * Math.PI / 180);
+    }
+    catch{
+        display.value = "Error";
+    }
+}
+
+function cos(){
+    try{
+        display.value = Math.cos(eval(display.value) * Math.PI / 180);
+    }
+    catch{
+        display.value = "Error";
+    }
+}
+
+function tan(){
+    try{
+        display.value = Math.tan(eval(display.value) * Math.PI / 180);
+    }
+    catch{
+        display.value = "Error";
+    }
+}
+
+function log(){
+    try{
+        display.value = Math.log10(eval(display.value));
+    }
+    catch{
+        display.value = "Error";
+    }
+}
+
+function ln(){
+    try{
+        display.value = Math.log(eval(display.value));
+    }
+    catch{
+        display.value = "Error";
+    }
+}
+
+</script>
 
 </body>
 </html>
